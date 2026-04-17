@@ -1,0 +1,34 @@
+/ money 1000000
+/ player-stat StaminaRechargeMult 6.0
+/ player-stat EngagementDistanceBonus 2.0
+/ player-stat HostileAOEDamageMultiplier 1.2
+/ player-stat FinishingBlowDamageMult 1.2
+/ player-stat KnockdownDefenseBonus 10
+/ player-stat WhileKnockeddownDefenseBonus 10
+/ player-stat RangedAttackSpeedMultiplier 2.0
+
+/ player-stat BonusWeaponSets 1
+/ player-stat BonusQuickSlots 1
+
+/ player-stat BaseMight 90
+/ player-stat BaseResolve 90
+/ player-stat BaseFortitude 90
+/ player-stat BaseWill 90
+/ player-stat BaseIntellect 90
+/ player-stat BaseConstitution 90
+/ player-stat BasePerception 90
+/ player-stat BaseDexterity 90
+/ player-stat BaseReflexes 90
+/ player-stat BaseDeflection 90
+
+/ player-stat PoisonDefenseBonus 60
+/ player-stat DiseaseDefenseBonus 60
+/ player-stat SpellDefenseBonus 60
+/ player-stat RangedDeflectionBonus 60
+/ player-stat StunDefenseBonus 60
+/ player-stat VeilDeflectionBonus 60
+/ player-stat PushDefenseBonus 60
+
+/ player-stat RangedAccuracyBonus 90
+
+/ player-stat PotionEffectiveness 30.0

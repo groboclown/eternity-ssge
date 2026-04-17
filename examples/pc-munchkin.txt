@@ -1,0 +1,101 @@
+# Munchkin Mode.
+# There might be values hidden in here that make enemies cause excessive damage if they miss.
+
+/ money 1000000
+/ player-stat EngagementDistanceBonus 2.0
+/ # player-stat HostileAOEDamageMultiplier 1.2
+/ player-stat FinishingBlowDamageMult 1.2
+/ player-stat RangedAttackSpeedMultiplier 2.0
+/ player-stat TrapDamageOrDurationMult 0.2
+/ player-stat VesselAccuracyBonus 40
+/ player-stat NearestAllyWithSharedTargetAccuracyBonus 10
+/ player-stat EnemyGrazeToMissPercent 99.0
+/ player-stat WilderAccuracyBonus 50
+/ player-stat EnemyCritToHitPercent 99.0
+/ player-stat AoERadiusMult 6.0
+/ player-stat MeleeAttackSpeedMultiplier 4.0
+/ player-stat ArmorSpeedFactorAdj 5.0
+/ player-stat BonusMissToGrazePercent 99.0
+/ player-stat TwoHandedDeflectionBonus 30
+/ player-stat EnemyReflexHitToGrazePercent 99.0
+/ player-stat EnemyHitToGrazePercent 99.0
+/ # player-stat BonusHitToCritPercentAll 99.0
+/ player-stat ChanterPhraseRadiusMult 20.0
+/ player-stat BonusHitToCritPercent 99.9
+/ player-stat EnemiesNeededToFlank 16
+/ player-stat BonusShieldDeflection 20
+/ player-stat ExtraSimultaneousHitDefenseBonus 20.0
+/ player-stat DisengagementAccuracyBonus 20
+/ player-stat SingleWeaponSpeedFactorAdj 20.0
+/ player-stat DamageMinBonus 20.0
+/ player-stat PrimordialAccuracyBonus 6
+/ player-stat RateOfFireMultiplier 3.0
+/ player-stat WeaponSwitchCooldownBonus 3.0
+/ player-stat FlankedAccuracyBonus 30
+/ player-stat RangedAttackDistanceMultiplier 3.0
+/ player-stat ImprovedFlanking 40
+/ player-stat ReloadSpeedMultiplier 3.0
+/ player-stat EngageableEnemyCount 3
+/ player-stat BonusRangedWeaponCloseEnemyDamageMult 2.0
+/ player-stat ZealousAuraRadiusMult 2.0
+/ player-stat MeleeAttackDistanceMultiplier 4.0
+/ player-stat BonusHealingGivenMult 6.0
+/ player-stat BonusHitToCritPercentEnemyBelow10Percent 60.0
+/ player-stat CritHitDamageMultiplierBonusEnemyBelow10Percent 4.0
+
+/ # player-stat MaxStamina 9000.0
+/ # player-stat MaxHealth 9000.0
+/ player-stat MaxStaminaMultiplier 3.0
+/ player-stat HealthStaminaPerLevel 200
+/ player-stat StaminaRechargeBonus 20.0
+/ player-stat BonusHealMult 20.0
+/ player-stat ClassHealthMultiplier 20.0
+/ player-stat FocusGainMult 3.0
+/ player-stat PoisonTickMult 4.0
+/ player-stat StaminaRechargeMult 6.0
+
+/ player-stat BonusWeaponSets 1
+/ player-stat BonusQuickSlots 1
+
+/ # player-stat Level 1
+
+/ # player-stat MeleeDTBypass 0.0
+/ # player-stat NegMoveTickMult 1.0
+/ # player-stat HostileEffectDurationMultiplier 1.0
+/ # player-stat RangedMovingRecoveryReductionPct 0.0
+/ # player-stat MeleeDamageRangePctIncreaseToMin 0.0
+/ # player-stat AttackerToHitRollOverride -1
+
+/ player-stat AthleticsSkill 8
+/ player-stat SurvivalSkill 8
+/ player-stat LoreSkill 8
+/ player-stat StealthSkill 8
+/ player-stat MechanicsSkill 8
+/ player-stat CraftingSkill 8
+/ player-stat RemainingSkillPoints 0
+
+/ player-stat BaseMight 90
+/ player-stat BaseResolve 90
+/ player-stat BaseFortitude 90
+/ player-stat BaseWill 90
+/ player-stat BaseIntellect 90
+/ player-stat BaseConstitution 90
+/ player-stat BasePerception 90
+/ player-stat BaseDexterity 90
+/ player-stat BaseReflexes 90
+/ player-stat BaseDeflection 90
+
+/ player-stat PoisonDefenseBonus 60
+/ player-stat DiseaseDefenseBonus 60
+/ player-stat SpellDefenseBonus 60
+/ player-stat RangedDeflectionBonus 60
+/ player-stat StunDefenseBonus 60
+/ player-stat VeilDeflectionBonus 60
+/ player-stat PushDefenseBonus 60
+/ player-stat KnockdownDefenseBonus 10
+/ player-stat WhileKnockeddownDefenseBonus 10
+/ player-stat WhileStunnedDefenseBonus 30
+
+/ player-stat RangedAccuracyBonus 90
+
+/ player-stat PotionEffectiveness 30.0

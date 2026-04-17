@@ -1,0 +1,6 @@
+/local*
+Local*.java
+local*.properties
+/build/
+/.gradle/
+/.idea/

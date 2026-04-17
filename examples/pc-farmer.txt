@@ -1,0 +1,20 @@
+# A simple farmer.
+
+/ money 12
+
+/ player-stat AthleticsSkill 0
+/ player-stat SurvivalSkill 2
+/ player-stat LoreSkill 0
+/ player-stat StealthSkill 0
+/ player-stat MechanicsSkill 0
+/ player-stat CraftingSkill 1
+/ player-stat RemainingSkillPoints 0
+
+/ player-stat BaseMight 11
+/ player-stat BaseResolve 8
+/ player-stat BaseFortitude 5
+/ player-stat BaseWill 3
+/ player-stat BaseIntellect 4
+/ player-stat BaseConstitution 6
+/ player-stat BasePerception 5
+/ player-stat BaseDexterity 6

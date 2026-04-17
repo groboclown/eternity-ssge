@@ -1,0 +1,27 @@
+# Make the player actually god-like, rather than just have that as a race.
+
+/ money 30000
+
+/ player-stat BonusWeaponSets 1
+/ player-stat BonusQuickSlots 1
+
+/ # player-stat Level 1
+
+/ player-stat AthleticsSkill 8
+/ player-stat SurvivalSkill 8
+/ player-stat LoreSkill 8
+/ player-stat StealthSkill 8
+/ player-stat MechanicsSkill 8
+/ player-stat CraftingSkill 8
+/ player-stat RemainingSkillPoints 0
+
+/ player-stat BaseMight 90
+/ player-stat BaseResolve 90
+/ player-stat BaseFortitude 90
+/ player-stat BaseWill 90
+/ player-stat BaseIntellect 90
+/ player-stat BaseConstitution 90
+/ player-stat BasePerception 90
+/ player-stat BaseDexterity 90
+/ player-stat BaseReflexes 90
+/ player-stat BaseDeflection 90
