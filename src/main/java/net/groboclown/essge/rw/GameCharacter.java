@@ -36,6 +36,19 @@ public class GameCharacter {
         }
     }
 
+    public Optional<String> getCharacterName() {
+        Optional<Object> oName = getStats()
+                .map(s -> s.getValue("OverrideName"));
+        if (oName.isEmpty()) {
+            return Optional.empty();
+        }
+        Object val = oName.get();
+        if (val instanceof String sVal) {
+            return Optional.of(sVal);
+        }
+        return Optional.empty();
+    }
+
     private Optional<Component> findNamed(final String name) {
         for (Component packet: this.components) {
             if (name.equals(packet.getType())) {

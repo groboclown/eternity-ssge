@@ -54,25 +54,9 @@ Arguments:
         if (Helpers.isBadExtraArgs(o, args)) {
             return 1;
         }
-        File dir = files.get("-d");
-        if (dir == null) {
-            List<File> guesses = InstallLocation.guessUserConfigLocation();
-            if (guesses.isEmpty()) {
-                o.pLn("ERROR: could not find any user configuration location.  Pass '-d' with the directory.");
-                return 1;
-            }
-            if (guesses.size() != 1) {
-                o.pLn("ERROR: could not determine the user configuration location.  Discovered:");
-                for (File g: guesses) {
-                    o.psLn(g.getAbsolutePath());
-                }
-                return 1;
-            }
-        }
-        Optional<File> saveDir = InstallLocation.getSavedGamesDir(dir);
+        Optional<File> saveDir = Helpers.getOptionSaveGameLocation(o, files);
         if (saveDir.isEmpty()) {
-            o.pLn("ERROR: '" + dir + "' is not a save game directory, and does not contain a directory named " +
-                    InstallLocation.SAVED_GAMES_DIR);
+            // Already reported the errors.
             return 1;
         }
 

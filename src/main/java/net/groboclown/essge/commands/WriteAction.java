@@ -61,6 +61,8 @@ Actions:
     command.
   all-companions-stat STAT VALUE
     Set every companion's stat STAT to the given VALUE.
+  character-stat NAME STAT VALUE
+    Set the character named NAME stat STAT to the VALUE.
   money VALUE
     Set the party's money.
   # any value
@@ -105,6 +107,18 @@ Actions:
                         continue;
                     }
                     setAllCompanionsStat(o, mobile, group.get(1), group.get(2));
+                    continue;
+                }
+                if ("character-stat".equals(cmd)) {
+                    if (Helpers.isNotSized(o, group, 4, 4)) {
+                        opened.setPersistent(false);
+                        failures++;
+                        continue;
+                    }
+                    if (!setNamedCharacterStat(o, mobile, group.get(1), group.get(2), group.get(3))) {
+                        opened.setPersistent(false);
+                        failures++;
+                    }
                     continue;
                 }
                 if ("money".equals(cmd) || "gold".equals(cmd)) {
@@ -154,6 +168,18 @@ Actions:
         for (GameCharacter gc: mobile.findCompanionObjects()) {
             setCharacterStat(o, gc, name, value);
         }
+    }
+
+    public static boolean setNamedCharacterStat(Out o, MobileObjects mobile, String charName, String statName, String value) {
+        List<GameCharacter> characters = mobile.findCharactersNamed(charName);
+        if (characters.isEmpty()) {
+            o.pLn("ERROR: could not find character named '" + charName + "'");
+            return false;
+        }
+        for (GameCharacter gc: characters) {
+            setCharacterStat(o, gc, statName, value);
+        }
+        return true;
     }
 
     public static boolean setMoney(Out o, MobileObjects mobile, String value) {
