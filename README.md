@@ -16,7 +16,6 @@ Currently not supported actions:
 
 * Modify individual pieces of equipment.
 * Add or remove items from the character inventories.
-* Update one specific companion character's stats.  *You can change the primary character's, or all the companions', but not a specific companion.*
 * Any fancy interface.  It's just a text-based command line tool right now.
 
 Because this was based on Eternity Keeper, this project is under the [GPL-3.0-or-later](LICENSE) license.
@@ -205,7 +204,7 @@ Any name with a `(String)`, `(Float)`, or `(Integer)` after it means you can cha
 
 ## Building from Source
 
-The program uses Gradle to build.  The source comes with the `gradlew` wrapper, so you don't need to download the right veresion of Gradle yourself.
+The program uses Gradle to build.  The source comes with the `gradlew` wrapper, so you don't need to download the right version of Gradle yourself.
 
 * On POSIX systems:
   ```shell
