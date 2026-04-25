@@ -99,6 +99,8 @@ public class InstallLocation {
             // See https://specifications.freedesktop.org/basedir/latest/
             asDir(System.getenv("XDG_DATA_HOME")).ifPresent(ret::add);
             getHomeDir().flatMap(f -> asSubDir(f, "share")).ifPresent(ret::add);
+            getHomeDir().flatMap(f -> asSubDir(f, ".local")).ifPresent(ret::add);
+            getHomeDir().flatMap(f -> asSubDir(f, ".local", "share")).ifPresent(ret::add);
         }
         return ret;
     }
@@ -141,15 +143,18 @@ public class InstallLocation {
         return Optional.empty();
     }
 
-    static Optional<File> asSubDir(final File parent, final String path) {
-        if (path == null || path.isEmpty()) {
-            return Optional.empty();
+    static Optional<File> asSubDir(final File parent, final String... paths) {
+        File ret = parent;
+        for (String path: paths) {
+            if (path == null || path.isEmpty()) {
+                return Optional.empty();
+            }
+            ret = new File(ret, path);
+            if (!ret.exists() || !ret.isDirectory()) {
+                return Optional.empty();
+            }
         }
-        File f = new File(parent, path);
-        if (f.exists() && f.isDirectory()) {
-            return Optional.of(f);
-        }
-        return Optional.empty();
+        return Optional.of(ret);
     }
 
     static String detectPlatform () {
