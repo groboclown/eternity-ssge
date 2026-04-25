@@ -1,6 +1,7 @@
 package net.groboclown.essge.commands.util;
 
 import net.groboclown.essge.commands.Out;
+import net.groboclown.essge.filetypes.InstallLocation;
 
 import java.io.File;
 import java.io.FileReader;
@@ -9,6 +10,7 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public class Helpers {
     public static File getFileArg(Out o, Map<String, File> files) {
@@ -132,5 +134,43 @@ public class Helpers {
             ret.add(remainder.toString());
         }
         return ret;
+    }
+
+    /**
+     * Use the '-d' argument, or, if not given, guess the install location.
+     * <p>
+     * If not found, then all errors are reported to the user and empty is returned.
+     *
+     * @param files file arguments.
+     * @return the discovered location.
+     */
+    public static Optional<File> getOptionSaveGameLocation(final Out o, final Map<String, File> files) {
+        File dir = files.get("-d");
+        if (dir == null) {
+            List<File> guesses = InstallLocation.guessUserConfigLocation();
+            if (guesses.isEmpty()) {
+                o.pLn("ERROR: could not find any user configuration location.  Pass '-d' with the directory.");
+                return Optional.empty();
+            }
+            if (guesses.size() != 1) {
+                o.pLn("ERROR: could not determine the user configuration location.  Discovered:");
+                for (File g: guesses) {
+                    o.psLn(g.getAbsolutePath());
+                }
+                return Optional.empty();
+            }
+            dir = guesses.getFirst();
+            if (dir == null) {
+                o.pLn("ERROR: could not find any user configuration location.  Pass '-d' with the directory.");
+                return Optional.empty();
+            }
+        }
+        Optional<File> saveDir = InstallLocation.getSavedGamesDir(dir);
+        if (saveDir.isEmpty()) {
+            o.pLn("ERROR: '" + dir + "' is not a save game directory, and does not contain a directory named " +
+                    InstallLocation.SAVED_GAMES_DIR);
+            return Optional.empty();
+        }
+        return saveDir;
     }
 }
