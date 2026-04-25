@@ -60,6 +60,26 @@ public class MobileObjects {
         return ret;
     }
 
+    public List<GameCharacter> findAllCharacterObjects() {
+        final List<GameCharacter> allChars = new ArrayList<>();
+        allChars.addAll(findPlayerObjects());
+        allChars.addAll(findCompanionObjects());
+        return allChars;
+    }
+
+    public List<GameCharacter> findCharactersNamed(String name) {
+        if (name == null) {
+            return List.of();
+        }
+        final List<GameCharacter> ret = new ArrayList<>();
+        for (GameCharacter character: findAllCharacterObjects()) {
+            if (character.getCharacterName().filter(name::equals).isPresent()) {
+                ret.add(character);
+            }
+        }
+        return ret;
+    }
+
     public Optional<RootProperty> findByObjectId(final String guid) {
         if (guid == null || guid.isEmpty() || guid.equals(RootProperty.NULL_GUID.toString())) {
             // Null object

@@ -38,14 +38,13 @@ Show the player's character (PC) and companions' stats.  Any stat shown as a 'St
 Arguments:
   -f SAVE_GAME_FILE
     (required) the save game file to inspect.
+  NAME ...
+    One or more character names to show stats for.  If no name given, then this shows all characters.
 """;
     }
 
     @Override
     public int run(Out o, Map<String, File> files, Map<String, String> strs, Set<String> options, List<String> args) throws Exception {
-        if (Helpers.isBadExtraArgs(o, args)) {
-            return 1;
-        }
         File file = Helpers.getFileArg(o, files);
         if (file == null) {
             return 1;
@@ -55,8 +54,17 @@ Arguments:
             UnpackedSaveGame contents = opened.getSave();
             MobileObjects objects = contents.readMobileObjects();
             final List<GameCharacter> allChars = new ArrayList<>();
-            allChars.addAll(objects.findPlayerObjects());
-            allChars.addAll(objects.findCompanionObjects());
+            if (args.isEmpty()) {
+                allChars.addAll(objects.findAllCharacterObjects());
+            } else {
+                for (String name: args) {
+                    List<GameCharacter> characters = objects.findCharactersNamed(name);
+                    if (characters.isEmpty()) {
+                        o.pLn("WARNING: no character found named '" + name + "'");
+                    }
+                    allChars.addAll(characters);
+                }
+            }
             for (GameCharacter gc: allChars) {
                 Optional<GameCharacter.Stats> stats = gc.getStats();
                 if (stats.isEmpty()) {
