@@ -25,7 +25,7 @@ Because this was based on Eternity Keeper, this project is under the [GPL-3.0-or
 
 You'll need at least Java 21 installed.
 
-You'll need to download the 'all' jar file, or [build it yourself](#building-from-source).  The following instructions assume you downloaded `eternity-ssge-1.0-all.jar` to your home directory, under the name `eternity-ssge.jar`.  If not, you can replace the references to `eternity-ssge.jar` with the actual location.
+You'll need to download the 'all' jar file, or [build it yourself](#building-from-source).  The following instructions assume you downloaded `eternity-ssge-1.1-all.jar` to your home directory, under the name `eternity-ssge.jar`.  If not, you can replace the references to `eternity-ssge.jar` with the actual location.
 
 To run it, you need to open a shell (cmd, PowerShell, xterm, etc), and from there, run:
 
@@ -40,7 +40,7 @@ Running the program like that brings up a long help menu.  The below sections sh
 If you're really good, you can shorthand that execution with a shell script.
 
 ```bash
-$JAVA_HOME/bin/java -jar $HOME/Downloads/eternity-ssge-1.0-all.jar "$@"
+$JAVA_HOME/bin/java -jar $HOME/Downloads/eternity-ssge-1.1-all.jar "$@"
 ```
 
 ### Guess the user configuration directory
