@@ -12,7 +12,7 @@ if ! which "${JAVA}" >/dev/null 2>&1 ; then
   fi
 fi
 
-jar=eternity-ssge-1.0-all.jar
+jar=eternity-ssge-1.1-all.jar
 if [ -f $(dirname "$0")/build/libs/${jar} ] ; then
   jar=$(dirname "$0")/build/libs/${jar}
 fi
