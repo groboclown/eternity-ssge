@@ -68,6 +68,11 @@ Arguments:
                 }
                 return 1;
             }
+            dir = guesses.getFirst();
+            if (dir == null) {
+                o.pLn("ERROR: could not find any user configuration location.  Pass '-d' with the directory.");
+                return 1;
+            }
         }
         Optional<File> saveDir = InstallLocation.getSavedGamesDir(dir);
         if (saveDir.isEmpty()) {
